@@ -51,17 +51,17 @@
         <div class="principal" id="d1">
             <div>        
                 <h2>Login</h2>
-                <div id="nm" class="input-group"> 
+                <div class="input-group"> 
                     Nome:
                     <br>
-                    <input type="text" placeholder="Digite seu nome"  required>
+                    <input id="nm" type="text" placeholder="Digite seu nome"  required>
                 </div>
                 <br>
 
-                <div id="lg" class="input-group">
+                <div class="input-group">
                     login: 
                     <br>
-                    <input type="email"  placeholder="Digite seu email"  required>
+                    <input id="lg" type="email"  placeholder="Digite seu email"  required>
                 </div>
                 <br>
 
@@ -78,7 +78,7 @@
                     <input id="s1" minlength="8" type="password" placeholder="Confirme sua senha"  required>
                 </div>
                 <br>
-                <button class="btn-blue" onclick="mostrar()">Fazer Login</button>
+                <button class="btn-blue" onclick="login()">Fazer Login</button>
                 <br>
                 <br>     
             </div>
@@ -160,12 +160,17 @@
             a = 0;
         } 
 
-        function mostrar(){
+        function login(){
             var senha0 = document.getElementById('s0').value;
             var senha1 = document.getElementById('s1').value;
             var name = document.getElementById('nm').value;
             var login = document.getElementById('lg').value;
+            
+            if(name.length > 10){
+                alert("o nome deve conter menos de 10 caracteres");
+            }else{
                 
+            
         }
 
         function mostrar(){
