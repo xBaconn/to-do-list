@@ -35,12 +35,6 @@
             padding: 5px;
         }
 
-        .input-group{
-            justify-content: space-around;
-            flex-direction: justify;
-            padding: 5px;
-        }
-
         body {
             
             background-attachment: fixed;
@@ -57,21 +51,31 @@
         <div class="principal" id="d1">
             <div>        
                 <h2>Login</h2>
-                <div class="input-group"> 
+                <div id="nm" class="input-group"> 
                     Nome:
+                    <br>
                     <input type="text" placeholder="Digite seu nome"  required>
                 </div>
                 <br>
-                
+
+                <div id="lg" class="input-group">
+                    login: 
+                    <br>
+                    <input type="email"  placeholder="Digite seu email"  required>
+                </div>
+                <br>
+
                 <div class="input-group">
                     Senha:
+                    <br>
                     <input id="s0" minlength="8" type="password" placeholder="Digite sua senha" required>
                 </div>
                 <br>
                 
                 <div class="input-group" >
                     Confirme sua senha:
-                    <input id="s1" minlength="8" type="password" placeholder="Digite sua senha"  required>
+                    <br>
+                    <input id="s1" minlength="8" type="password" placeholder="Confirme sua senha"  required>
                 </div>
                 <br>
                 <button class="btn-blue" onclick="mostrar()">Fazer Login</button>
@@ -151,18 +155,23 @@
         }
 
         function limpar() {
-
-            document.getElementsByClassName('marcados')[0].remove();
-
+            for(var a = 0 ; a <= 10 ; a++)
+            document.getElementsByClassName('marcados')[a].remove();
+            a = 0;
         } 
 
         function mostrar(){
             var senha0 = document.getElementById('s0').value;
             var senha1 = document.getElementById('s1').value;
-            
-            var tests0 = senha0.value;
-            if(length(tests0) >= 8 ){
+            var name = document.getElementById('nm').value;
+            var login = document.getElementById('lg').value;
+                
+        }
 
+        function mostrar(){
+            var senha0 = document.getElementById('s0').value;
+            var senha1 = document.getElementById('s1').value;
+            
                 if( senha0 == senha1){
                     document.getElementById("d1").style.display = "none";
                     document.getElementById("d2").style.display = "inline";
@@ -170,10 +179,7 @@
                 else{
                     alert("senhas diferentes");
                 }
-            }else{
-                alert("a senha contém menos de 8 caracteres");
-            }
-    }    
+        }    
     </script>
 </body>
 
