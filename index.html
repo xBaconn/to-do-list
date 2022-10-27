@@ -168,9 +168,14 @@
             
             if(name.length > 10){
                 alert("o nome deve conter menos de 10 caracteres");
-            }else{
-                
-            
+            }
+            if( senha0 == senha1 ){
+                document.getElementById("d1").style.display = "none";
+                document.getElementById("d2").style.display = "inline";
+            }
+            else{
+                alert("senhas diferentes");
+            }   
         }
 
         function mostrar(){
